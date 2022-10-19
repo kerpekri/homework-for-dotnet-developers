@@ -1,1 +1,29 @@
-# homework-for-dotnet-developers
+# Challenge
+
+Task is to develop a simple app that handles order placement. It should be implemented as a headless web api that exposes following endpoints:
+* Place an order for a product providing desired amount, customers id, expected delivery date
+* List all customers orders
+
+Discount rules:
+* Product base price is 98.99 EUR
+* Starting from 10 item order there is 5% discount
+* From 50 item order there is 15% discount
+
+Reject order placement when:
+* Delivery date is not in future
+* Desired amount is not positve round number
+* Desired amount is greater than 999
+
+You can skip authentication and authorization. 
+
+## Technical requirements
+* Use c# programming language
+* Use any testing framework for tests
+* You can choose whatever tools and libraries you prefer
+
+## What gets evaluated
+* Conformance to business requirements
+* Code quality (we value design guided by tests)
+* Checkout-and-run convenience
+
+## Have fun! 
