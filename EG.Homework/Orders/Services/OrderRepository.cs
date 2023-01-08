@@ -16,7 +16,11 @@ public class OrderRepository : IOrderRepository
 
     public IEnumerable<Order> Get(int customerId)
     {
-        return _context.Orders.Where(ord => ord.CustomerId == customerId);
+        var orders = _context.Orders.Where(ord => ord.CustomerId == customerId);
+
+        if (orders is null) throw new KeyNotFoundException("Order not found");
+
+        return orders;
     }
 
     public async Task Create(Order order)
