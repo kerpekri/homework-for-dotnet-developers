@@ -1,6 +1,6 @@
 ﻿namespace EG.Homework.Orders.Services;
 
-public class NoDiscountStrategy : DiscountStrategy
+public class SmallOrderDiscountStrategy : DiscountStrategy
 {
     public override decimal ApplyDiscount(int quantity)
     {

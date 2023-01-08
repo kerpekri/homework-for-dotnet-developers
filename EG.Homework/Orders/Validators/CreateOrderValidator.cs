@@ -27,7 +27,7 @@ public class CreateOrderValidator : AbstractValidator<CreateOrder>
             .WithMessage("Delivery date must be in the future.");
     }
 
-    private static bool BeRoundNumber(double value) => value % 1 == 0;
+    private static bool BeRoundNumber(decimal value) => value % 1 == 0;
 
-    private static bool BeInFuture(DateTime value) => value > DateTime.Now;
+    private static bool BeInFuture(DateTime value) => value > DateTime.UtcNow;
 }

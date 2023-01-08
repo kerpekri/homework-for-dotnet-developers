@@ -6,38 +6,22 @@ namespace EG.Homework.Orders.Services;
 
 public class OrderRepository : IOrderRepository
 {
-    public OrderRepository()
-    {
-        using var context = new ApiContext();
-        var authors = new List<Order>
-        {
-            new Order()
-            {
-            },
-            new Order()
-            {
-            }
-        };
+    private readonly DataContext _context;
 
-        context.Orders.AddRange(authors);
-        context.SaveChanges();
+    public OrderRepository(
+        DataContext context)
+    {
+        _context = context;
     }
 
-    public List<Order> Get()
+    public IEnumerable<Order> Get(int customerId)
     {
-        using (var context = new ApiContext())
-        {
-            var list = context.Orders
-                // .Include(a => a.Books)
-                .ToList();
-            return list;
-        }
+        return _context.Orders.Where(ord => ord.CustomerId == customerId);
     }
 
     public async Task Create(Order order)
     {
-        await using var databaseContext = new ApiContext();
-
-        await databaseContext.Orders.AddAsync(order);
+        await _context.Orders.AddAsync(order);
+        await _context.SaveChangesAsync();
     }
 }

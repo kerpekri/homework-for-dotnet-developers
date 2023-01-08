@@ -6,6 +6,6 @@ namespace EG.Homework.Orders.Interfaces;
 
 public interface IOrderConverter
 {
-    Order ToEntity(CreateOrder order);
-    OrderModel ToModel(Order role);
+    Order ToEntity(CreateOrder order, decimal price);
+    OrderModel ToModel(Order order);
 }

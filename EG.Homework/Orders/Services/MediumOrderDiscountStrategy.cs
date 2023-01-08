@@ -1,6 +1,6 @@
 ﻿namespace EG.Homework.Orders.Services;
 
-public class DiscountTwoStrategy : DiscountStrategy
+public class MediumOrderDiscountStrategy : DiscountStrategy
 {
     private new const decimal Discount = 0.05m;
 

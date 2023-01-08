@@ -2,7 +2,7 @@
 
 namespace EG.Homework.Orders.Interfaces;
 
-public interface IDiscountStrategySelector
+public interface IDiscountSelector
 {
     DiscountStrategy Select(int amount);
 }

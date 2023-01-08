@@ -20,9 +20,9 @@ public class OrdersController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public IActionResult Get(int customerId)
     {
-        return Ok();// await orders.
+        return Ok(_orders.Get(customerId));
     }
 
     [HttpPost]
